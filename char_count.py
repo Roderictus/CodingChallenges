@@ -3,17 +3,15 @@ import string
 
 def get_char_count(s):
     alphabet = string.ascii_lowercase + str(1234567890)
-    #temp =sorted(set(s.lower()))
     temp = sorted(s.lower())
     hilo = ""
     for char in temp:
         if char in alphabet:
             hilo += char
-    #print(f"hilo: {hilo}")
-    unique = set(hilo)
-    #print(f"unique: {unique}")
+    print(f"hilo: {hilo}")
+    unique = sorted(set(hilo))
+    print(f"unique: {unique}")
     value_list = [hilo.count(char) for char in unique]
-    #print(f"value list : {value_list}")
     value_list = sorted(set(value_list), reverse = True)
     #print(f"sorted unique value list : {value_list}")
     sol = dict()
