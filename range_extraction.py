@@ -1,36 +1,45 @@
+# https://www.codewars.com/kata/51ba717bb08c1cd60f00002f/train/python
 def solution(args):
     string = ""
-    primero = True
-    for i in range(1, len(args) + 1):
+    primero = False
+    for i in range(1, len(args)+1):
         print(f"ciclo" + str(i) )
-        if i == (len(args)) or args[i]-args[i-1] > 1:
+
+        if i == (len(args)):
             if primero == True:
-                string = string + str(args[i - 1]) + ","
+                print(f"esto es i : {i} esto es lenarg {len(args)} esto {args[i-1]}")
+                print(f"string es: {string}")
+                string = string + "-" + str(args[i - 1])
                 #primero = False
+                print(5)
+            elif primero == False:
+                #string = string + str(args[i - 1]) + ","
+                #primero = True
+                print(6)
+
+        elif args[i]-args[i-1] > 1:
+            if primero == True:
+                string = string + "-" + str(args[i - 1]) + ","
+                primero = False
                 print(3)
             elif primero == False:
-                if i == (len(args)):
-                    string = string + str(args[i - 1]) + ","
-                primero = True
-                print(4)
-        elif args[i]-args[i-1] == 1: #funcion distancia
-            if primero == False:
-                print(2)
-                #pass
-            elif primero == True:
-                #prim_arg = str(args[i-1])
+                string = string + str(args[i - 1]) + ","
                 primero = False
-                string = string + str(args[i-1]) + "-"
+                print(4)
+
+        elif args[i]-args[i-1] == 1: #funcion distancia
+            if primero == True:
+                #prim_arg = str(args[i-1])
+                #string = string + str(args[i-1]) + "-"
                 print(1)
-                #pass
-        #     if primero == True:
-        #         string = string + str(arg)
-        #         primero = False
-        #     if primero == False:
+            elif primero == False:
+                string = string + str(args[i - 1])
+                primero = True
+                print(2)
 
-    return string.rstrip(string[-1])
+    return string
 
-#args = [1,3,5,7,8,9,10,12,14,15,16,17]
+#args = [1,2,3,5,7,11,12,13]
 args = [-6,-3,-2,-1,0,1,3,4,5,7,8,9,10,11,14,15,17,18,19,20]
 #args = [-3,-2,-1,2,10,15,16,18,19,20]
 #args = [0,1,2,3,4,5,7,9,11,12,13,14,15,17,20,24]
@@ -57,3 +66,34 @@ print(temp)
 #         # if args[i + 2] - args[i]
 #
 # return string
+
+# def solution(args):
+#     string = ""
+#     primero = True
+#     for i in range(1, len(args) + 1):
+#         print(f"ciclo" + str(i) )
+#         if i == (len(args)) or args[i]-args[i-1] > 1:
+#             if primero == True:
+#                 string = string + str(args[i - 1]) + ","
+#                 #primero = False
+#                 print(3)
+#             elif primero == False:
+#                 if i == (len(args)):
+#                     string = string + str(args[i - 1]) + ","
+#                 primero = True
+#                 print(4)
+#         elif args[i]-args[i-1] == 1: #funcion distancia
+#             if primero == False:
+#                 print(2)
+#                 #pass
+#             elif primero == True:
+#                 #prim_arg = str(args[i-1])
+#                 primero = False
+#                 string = string + str(args[i-1]) + "-"
+#                 print(1)
+#                 #pass
+#         #     if primero == True:
+#         #         string = string + str(arg)
+#         #         primero = False
+#         #     if primero == False:
+
