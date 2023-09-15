@@ -1,11 +1,12 @@
 def binary_average(binary):
     val = 0
     lenstr = len(binary)
+
     for i in range(0,lenstr) :
-        if binary[i] == "0":
-            pass
-        elif binary[i] == "1":
+        if binary[i] == "1" or i ==0 and lenstr > 1:
             val = val + 2**(lenstr-i-1)
+        elif binary[i] == "0":
+            pass
         elif binary[i] == "x":
             val = val + (2**(lenstr-i-1))/2
     return val
