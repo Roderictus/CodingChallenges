@@ -15,7 +15,7 @@ def square_sums(number):
         for num in remaining:
             if (last_num + num) in usable_squares:
                 new_sequence = current_sequence + [num]
-                print(new_sequence)
+                #print(new_sequence)
                 #time.sleep(1)
                 new_remaining = remaining - {num}
                 result = backtrack(new_remaining, new_sequence)
@@ -32,7 +32,7 @@ def square_sums(number):
             return sequence
     return None
 
-temp = square_sums(5)
+temp = square_sums(6)
 
 print(temp)
 
